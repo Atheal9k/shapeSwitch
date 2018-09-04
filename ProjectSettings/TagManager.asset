@@ -8,6 +8,7 @@ TagManager:
   - square
   - triangle
   - player
+  - shape
   layers:
   - Default
   - TransparentFX

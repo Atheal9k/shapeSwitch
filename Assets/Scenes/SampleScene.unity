@@ -200,13 +200,14 @@ GameObject:
   - component: {fileID: 1278682451}
   - component: {fileID: 1278682450}
   - component: {fileID: 1278682449}
+  - component: {fileID: 1278682452}
   m_Layer: 0
   m_Name: star
   m_TagString: star
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1278682449
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -291,6 +292,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1278682452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1278682448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b47c914f5e11384fb714c2b0156c179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
 --- !u!1 &1296709285
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,6 +317,7 @@ GameObject:
   - component: {fileID: 1296709286}
   - component: {fileID: 1296709290}
   - component: {fileID: 1296709291}
+  - component: {fileID: 1296709292}
   m_Layer: 0
   m_Name: squid 6
   m_TagString: player
@@ -409,8 +423,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1296709285}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.28, y: -2.63, z: 0}
-  m_LocalScale: {x: 0.384, y: 0.384, z: 0.384}
+  m_LocalPosition: {x: 0.15, y: -3.11, z: 0}
+  m_LocalScale: {x: 0.25728002, y: 0.25728002, z: 0.25728002}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -442,6 +456,66 @@ MonoBehaviour:
   triangle: {fileID: 21300000, guid: f8fdf708d6ccce043a11e1610e5b6fe6, type: 3}
   square: {fileID: 21300000, guid: 8e36248e417c53d47a8ad7bcc264c56c, type: 3}
   star: {fileID: 21300000, guid: 766b102724cfd174d87e6239f3ab1ee0, type: 3}
+--- !u!114 &1296709292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1296709285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1517e4d136d994791a3f2e1b977850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canDrag: 1
+  isDragging: 0
+--- !u!1 &1328697354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1328697356}
+  - component: {fileID: 1328697355}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1328697355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1328697354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b75caf37a7e951544988085c22b61681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapeHazardPattern:
+  - {fileID: 1270574116115260, guid: cd2b1ca9abbdd154cb78ac0634646be7, type: 2}
+  - {fileID: 1692580481461412, guid: 17e6a6fc5ffc45f48a87487decc434b3, type: 2}
+  - {fileID: 1435939445239674, guid: a7a6e8e8320fbde4ea2ae6e13b4d8640, type: 2}
+  startTimeBtwSpawn: 2.3
+  decreaseTime: 0.05
+  minTime: 0.65
+--- !u!4 &1328697356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1328697354}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1386248174
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,12 +527,12 @@ GameObject:
   - component: {fileID: 1386248176}
   - component: {fileID: 1386248175}
   m_Layer: 0
-  m_Name: check-box-empty
+  m_Name: square
   m_TagString: square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1386248175
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -554,12 +628,12 @@ GameObject:
   - component: {fileID: 1962389174}
   - component: {fileID: 1962389173}
   m_Layer: 0
-  m_Name: caret-arrow-up
+  m_Name: triangle
   m_TagString: triangle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1962389173
 BoxCollider2D:
   m_ObjectHideFlags: 0
