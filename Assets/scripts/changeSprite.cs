@@ -47,6 +47,8 @@ public class changeSprite : MonoBehaviour {
         else
         {
             print("gameover");
+            FindObjectOfType<GameManager>().GameOver();
+            Destroy(gameObject);
         }
     }
 
