@@ -10,7 +10,9 @@ public class changeSprite : MonoBehaviour {
     public Sprite triangle;
     public Sprite square;
     public Sprite star;
-
+    int lastRandomNumber = 9;
+    int newRandomNumber;
+    bool mustBeDifferent = true;
 
     void Start()
     {
@@ -25,18 +27,21 @@ public class changeSprite : MonoBehaviour {
         {
             
             SetRandomTag();
+            mustBeDifferent = true;
         }
 
         if (col.gameObject.tag == "triangle" && currentTag == "triangle")
         {
 
             SetRandomTag();
+            mustBeDifferent = true;
         }
 
         if (col.gameObject.tag == "square" && currentTag == "square")
         {
 
             SetRandomTag();
+            mustBeDifferent = true;
         }
 
         else
@@ -47,24 +52,44 @@ public class changeSprite : MonoBehaviour {
 
     void SetRandomTag()
     {
-        int index = Random.Range(0,3);
-
-        switch (index)
+        while (mustBeDifferent == true)
         {
-            case 0:
-                currentTag = "star";
-                sr.sprite = star;
-                break;
-            case 1:
-                currentTag = "triangle";
-                sr.sprite = triangle;
-                break;
-            case 2:
-                currentTag = "square";
-                sr.sprite = square;
-                break;
-            
+            int index = Random.Range(0, 3);
+            if (index != lastRandomNumber)
+            {
+                switch (index)
+                {
+                    case 0:
+                        currentTag = "star";
+                        sr.sprite = star;
+                        lastRandomNumber = 0;
+                        break;
+                    case 1:
+                        currentTag = "triangle";
+                        sr.sprite = triangle;
+                        lastRandomNumber = 1;
+                        break;
+                    case 2:
+                        currentTag = "square";
+                        sr.sprite = square;
+                        lastRandomNumber = 2;
+                        break;
+
+                }
+
+                mustBeDifferent = false;
+
+
+            }
         }
+
+        
+
+        
+
+        
+
+        
        
     }
 }
