@@ -5,6 +5,8 @@ using UnityEngine;
 public class hazards : MonoBehaviour {
 
     public float speed;
+    public changeSprite cs;
+   
 
     void Update()
     {
@@ -15,6 +17,7 @@ public class hazards : MonoBehaviour {
     {
         if (col.gameObject.tag == "player")
         {
+            
             Destroy(gameObject);
         }
     }
